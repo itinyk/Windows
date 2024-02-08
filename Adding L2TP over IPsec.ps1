@@ -1,0 +1,1 @@
+Add-VpnConnection -Name "Art&Graft" -ServerAddress "art-gtaft-lan-ccvndqpgmt.dynamic-m.com" -TunnelType "L2tp" -EncryptionLevel "Required" -AuthenticationMethod Pap, MSCHAPv2 -AllUserConnection -L2tpPsk "pleaseletmein" -Force -RememberCredential -WarningAction silentlyContinue
