@@ -1,0 +1,4 @@
+$DriveLetter = "Z:"
+$NetworkPath = "\\server\share"  # Replace with your actual server and share name
+
+New-PSDrive -Name $DriveLetter -PSProvider FileSystem -Root $NetworkPath -Persist
