@@ -1,0 +1,16 @@
+# **1. Get the currently logged-in username**
+$loggedInUser = $env:USERNAME
+
+# **2. Verify the user is a member of the Administrators group**
+if ((Get-LocalGroupMember -Group "Administrators" -Member $loggedInUser) -ne $null) {
+    try {
+        # **3. Remove the user from the Administrators group**
+        Remove-LocalGroupMember -Group "Administrators" -Member $loggedInUser
+
+        Write-Output "$loggedInUser has been removed from the Administrators group."
+    } catch {
+        Write-Error "Failed to remove $loggedInUser from the Administrators group. Error: $_"
+    }
+} else {
+    Write-Output "$loggedInUser is not a member of the Administrators group."
+}
